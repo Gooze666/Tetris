@@ -34,7 +34,7 @@ namespace Tetris
         {
             Timer = new DispatcherTimer();
             Timer.Tick += new EventHandler(Timer_Tick);
-            Timer.Interval = new TimeSpan(0, 0, 0, 1);
+            Timer.Interval = new TimeSpan(0, 0, 0, 5);
             GameStart();
         }
         private void GameStart()

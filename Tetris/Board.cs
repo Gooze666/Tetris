@@ -156,6 +156,7 @@ namespace Tetris
             Point Position = currTetramino.getCurrPosition();
             Point[] Shape = currTetramino.getCurrShape();
             bool move = true;
+            currTetraminoErase();
             foreach (Point P in Shape)
             {
                 if (((int)(P.X + Position.X) + ((Cols / 2) - 1) + 1) >= Cols)
@@ -163,8 +164,9 @@ namespace Tetris
                     move = false;
                 }
                 else if (SpielRaster[((int)(P.X + Position.X) + ((Cols / 2) - 1) + 1),
-                    (int)(P.Y + Position.Y) + 2].Background != NoBrush)
+                    (int)(P.Y + Position.Y) + 4].Background != NoBrush)
                 {
+                    //System.Windows.MessageBox.Show("Aktueller Punkt X =" + P.X.ToString() + "\nAktuelle Position des Steins:" + Position.X.ToString());
                     move = false;
                 }
             }
